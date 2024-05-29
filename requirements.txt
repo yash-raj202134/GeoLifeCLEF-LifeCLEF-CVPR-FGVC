@@ -5,3 +5,5 @@ xgboost
 matplotlib
 folium
 cartopy
+tqdm
+einops
