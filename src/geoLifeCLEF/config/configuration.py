@@ -4,7 +4,7 @@ from typing import List
 
 from src.geoLifeCLEF.utils.common import read_yaml,create_directories
 
-from src.geoLifeCLEF.entity.config_entity import DataIngestionConfig
+from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,DataValidationConfig)
 
 
 class ConfigurationManager:
@@ -58,6 +58,26 @@ class ConfigurationManager:
             data_ingestion_configs.append(data_ingestion_config)
 
         return data_ingestion_configs
+
+    def get_data_validation_config(self)->DataValidationConfig:
+        config = self.config.data_validation
+
+        create_directories([config.root_dir])
+
+        data_validation_config = DataValidationConfig(
+            root_dir = config.root_dir,
+            STATUS_FILE = config.STATUS_FILE,
+            ALL_REQUIRED_FOLDERS = config.ALL_REQUIRED_FOLDERS,
+            # ALL_REQUIRED_FOLDERS=[Path(folder) for folder in config['ALL_REQUIRED_FOLDERS']],
+            # ALL_REQUIRED_FILES=[Path(file) for file in config['ALL_REQUIRED_FILES']]
+            ALL_REQUIRED_FILES= config.ALL_REQUIRED_FILES
+
+        )
+
+        return data_validation_config
+    
+
+
 
 # class ConfigurationManager:
 #     def __init__(self, config_filepath:Path, params_filepath:Path):
