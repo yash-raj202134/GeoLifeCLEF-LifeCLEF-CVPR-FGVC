@@ -4,29 +4,29 @@ from src.geoLifeCLEF.pipeline.stage_02_data_validation import DataValidationPipe
 from src.geoLifeCLEF.pipeline.stage_03_data_loading_and_transformation import DataLoadingandTransformationPipeline
 
 def main():
+    
     # STAGE_NAME = "DATA INGESTION"
     # # logger.info("test log 2")
     # # Run the data ingestion pipeline
     # try:
     #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
     #     pipeline = DataIngestionPipeline()
-    #     pipeline.main()
-    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
     # except Exception as e:
     #     logger.exception(e)
     #     raise e
     
 
-
-    # STAGE_NAME = "DATA VALIDATION"   
-    # try:
-    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-    #     pipeline = DataValidationPipeline()
-    #     pipeline.main()
-    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
-    # except Exception as e:
-    #     logger.exception(e)
-    #     raise e
+    STAGE_NAME = "DATA VALIDATION"   
+    try:
+        logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+        pipeline = DataValidationPipeline()
+        pipeline.run()
+        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e
 
 
     STAGE_NAME = "DATA LOADING STAGE"
@@ -34,7 +34,7 @@ def main():
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
         pipeline = DataLoadingandTransformationPipeline()
         pipeline.run()
-        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
     except Exception as e:
         logger.exception(e)
         raise e
@@ -44,6 +44,7 @@ def main():
 from src.geoLifeCLEF.utils import load_data_loaders
 
 if __name__ =="__main__":
+
     main()
     train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
     print(type(test_loader))

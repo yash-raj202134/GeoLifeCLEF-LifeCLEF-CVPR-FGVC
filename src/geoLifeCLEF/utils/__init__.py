@@ -1,5 +1,5 @@
 import os
-import torch
+import torch # type: ignore
 import numpy as np
 import pickle
 
@@ -29,19 +29,26 @@ def set_seed(seed):
 
 
 def save_data_loaders(path,train_loader,val_loader,test_loader):
-        with open(path, 'wb') as f:
-            pickle.dump({
-                'train_loader': train_loader,
-                'val_loader': val_loader,
-                'test_loader': test_loader
-            }, f)
+        try:
+            with open(path, 'wb') as f:
+                pickle.dump({
+                    'train_loader': train_loader,
+                    'val_loader': val_loader,
+                    'test_loader': test_loader
+                }, f)
+        except Exception as e:
+            return False
+    
+        return True
 
 
 def load_data_loaders(path):
-    with open(path, 'rb') as f:
-        loaders = pickle.load(f)
-        train_loader = loaders['train_loader']
-        val_loader = loaders['val_loader']
-        test_loader = loaders['test_loader']
-    
+    try:
+        with open(path, 'rb') as f:
+            loaders = pickle.load(f)
+            train_loader = loaders['train_loader']
+            val_loader = loaders['val_loader']
+            test_loader = loaders['test_loader']
+    except Exception as e:
+        raise e
     return train_loader,val_loader,test_loader

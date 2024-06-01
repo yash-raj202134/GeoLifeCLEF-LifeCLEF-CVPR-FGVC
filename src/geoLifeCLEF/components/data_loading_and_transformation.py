@@ -1,23 +1,16 @@
 
 # Imports:
 import os
-import torch
-from tqdm import tqdm
-from copy import deepcopy
+import torch # type: ignore
 import numpy as np
-import pandas as pd
-import torchvision.models as models
-import torchvision.transforms as transforms
-import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader, random_split
-from torch.optim.lr_scheduler import CosineAnnealingLR
-from sklearn.metrics import precision_recall_fscore_support
-from torch.distributions.beta import Beta
-from PIL import Image
-from src.geoLifeCLEF.utils import construct_patch_path , set_seed,save_data_loaders
+import pandas as pd # type: ignore
+import torchvision.models as models # type: ignore
+import torchvision.transforms as transforms # type: ignore
+from torch.utils.data import Dataset, DataLoader, random_split # type: ignore
+from PIL import Image # type: ignore
+from src.geoLifeCLEF.utils import construct_patch_path , set_seed, save_data_loaders
 from src.geoLifeCLEF.entity.config_entity import DataLoadingandTransformationConfig
 from src.geoLifeCLEF.constants import *
-import pickle
 
 
 
@@ -89,7 +82,8 @@ class DataLoadingandTransformation():
         test_dataset = TestDataset(test_tab, test_bioclim_data_path, test_landsat_data_path, test_sentinel_data_path, test_metadata, transform=transform)
         self.test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
 
-        save_data_loaders(self.config.save_data,self.train_loader,self.val_loader,self.test_loader)
+        status = save_data_loaders(self.config.save_data,self.train_loader,self.val_loader,self.test_loader)
+        return status
 
 
     def get_data_loaders(self):

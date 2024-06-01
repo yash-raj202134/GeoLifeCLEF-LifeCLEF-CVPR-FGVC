@@ -16,7 +16,7 @@ class DataIngestionPipeline:
 
 
 
-    def main(self):
+    def run(self):
         """
         Main method to handle data ingestion.
         """

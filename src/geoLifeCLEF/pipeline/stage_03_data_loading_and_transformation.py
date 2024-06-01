@@ -17,7 +17,8 @@ class DataLoadingandTransformationPipeline:
         config = ConfigurationManager(config_filepath=CONFIG_FILE_PATH,params_filepath=PARAMS_FILE_PATH)
         data_loading_and_transformation_config = config.get_data_loader_and_transformer_config()
         data_loading_and_transformation = DataLoadingandTransformation(config=data_loading_and_transformation_config)
-        data_loading_and_transformation.prepare_data()
+        status = data_loading_and_transformation.prepare_data()
+        logger.info(status)
         
 
 
