@@ -8,5 +8,5 @@ PARAMS_FILE_PATH = Path("params.yaml")
 
 DEBUG = False
 num_classes = 11255 # Number of all unique classes within the PO and PA data.
-seed = 151
+
 

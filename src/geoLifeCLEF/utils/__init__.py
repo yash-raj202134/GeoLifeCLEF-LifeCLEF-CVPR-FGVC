@@ -24,6 +24,8 @@ def set_seed(seed):
         # Set cuDNN's random number generator seed for deterministic behavior
         torch.backends.cudnn.deterministic = True
         torch.backends.cudnn.benchmark = False
+    
+    return seed
 
 
 def save_data_loaders(path,train_loader,val_loader,test_loader):

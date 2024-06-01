@@ -62,6 +62,8 @@ class DataLoadingandTransformation():
         train_metadata_path = self.config.dataset+"/GLC24_PA_metadata_train.csv"
 
         train_metadata = pd.read_csv(train_metadata_path)
+        seed = 151
+        seed = set_seed(seed)
 
         # Create train datasets
         self.train_dataset = TrainDataset(train_tab, train_bioclim_data_path,train_landsat_data_path,train_sentinel_data_path, train_metadata, transform=transform)
