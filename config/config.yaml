@@ -34,3 +34,8 @@ data_loading_and_transformation:
   root_dir: artifacts/data_loader
   dataset: artifacts/data_ingestion/geolifeclef-2024
   save_data: artifacts/data_loader/geolifeclef-2024
+
+initialize_multimodal:
+  root_dir: artifacts/multi_modal
+  data_loader_path: artifacts/data_loader
+

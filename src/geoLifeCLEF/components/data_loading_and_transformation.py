@@ -81,8 +81,12 @@ class DataLoadingandTransformation():
         # create test dataset
         test_dataset = TestDataset(test_tab, test_bioclim_data_path, test_landsat_data_path, test_sentinel_data_path, test_metadata, transform=transform)
         self.test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
-
+        
+        # saving the output files
         status = save_data_loaders(self.config.save_data,self.train_loader,self.val_loader,self.test_loader)
+        train_tab.to_csv(os.path.join(self.config.root_dir,"train_tab.csv"))
+        test_tab.to_csv(os.path.join(self.config.root_dir,"test_tab.csv"))
+
         return status
 
 

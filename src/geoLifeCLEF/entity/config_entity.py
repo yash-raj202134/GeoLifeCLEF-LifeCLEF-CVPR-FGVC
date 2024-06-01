@@ -13,7 +13,6 @@ class DataIngestionConfig:
     unzip_dir: Path
 
 
-
 @dataclass
 class DataValidationConfig:
     root_dir: Path
@@ -27,4 +26,10 @@ class DataLoadingandTransformationConfig:
     root_dir: Path
     dataset: Path
     save_data: Path
+
+@dataclass
+class Multimodalconfig:
+    root_dir : Path
+    data_loader_path: Path
+
 

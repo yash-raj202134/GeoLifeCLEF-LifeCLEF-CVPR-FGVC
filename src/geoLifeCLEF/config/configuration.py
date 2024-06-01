@@ -6,7 +6,8 @@ from src.geoLifeCLEF.utils.common import read_yaml,create_directories
 
 from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,
                                                   DataValidationConfig,
-                                                  DataLoadingandTransformationConfig)
+                                                  DataLoadingandTransformationConfig,
+                                                  Multimodalconfig)
 
 
 class ConfigurationManager:
@@ -91,7 +92,19 @@ class ConfigurationManager:
 
         return data_loader_and_transformer_config
     
+    def get_initialize_multimodal_config(self)-> Multimodalconfig:
+        config = self.config.initialize_multimodal
+
+        create_directories([config.root_dir])
+
+        multi_modal_config = Multimodalconfig(
+            root_dir = config.root_dir,
+            data_loader_path= config.data_loader_path
+
+        )
+        return multi_modal_config
     
+
     
 
 
