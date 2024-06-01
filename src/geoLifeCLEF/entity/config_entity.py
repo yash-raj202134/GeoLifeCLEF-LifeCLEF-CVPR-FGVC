@@ -20,3 +20,11 @@ class DataValidationConfig:
     STATUS_FILE: str
     ALL_REQUIRED_FOLDERS: List[Path]
     ALL_REQUIRED_FILES: List[Path]
+
+
+@dataclass
+class DataLoadingandTransformationConfig:
+    root_dir: Path
+    dataset: Path
+    save_data: Path
+

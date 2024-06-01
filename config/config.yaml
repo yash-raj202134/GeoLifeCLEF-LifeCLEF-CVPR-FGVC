@@ -29,3 +29,8 @@ data_validation:
     "artifacts/data_ingestion/GLC24_SAMPLE.csv"
   ]
 
+
+data_loading_and_transformation:
+  root_dir: artifacts/data_loader
+  dataset: artifacts/data_ingestion/geolifeclef-2024
+  save_data: artifacts/data_loader/geolifeclef-2024

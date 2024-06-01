@@ -1,7 +1,7 @@
 from src.geoLifeCLEF import logger
 from src.geoLifeCLEF.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from src.geoLifeCLEF.pipeline.stage_02_data_validation import DataValidationPipeline
-
+from src.geoLifeCLEF.pipeline.stage_03_data_loading_and_transformation import DataLoadingandTransformationPipeline
 
 def main():
     # STAGE_NAME = "DATA INGESTION"
@@ -18,11 +18,22 @@ def main():
     
 
 
-    STAGE_NAME = "DATA VALIDATION"   
+    # STAGE_NAME = "DATA VALIDATION"   
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = DataValidationPipeline()
+    #     pipeline.main()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
+
+
+    STAGE_NAME = "DATA LOADING STAGE"
     try:
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = DataValidationPipeline()
-        pipeline.main()
+        pipeline = DataLoadingandTransformationPipeline()
+        pipeline.run()
         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
         logger.exception(e)
@@ -30,7 +41,10 @@ def main():
 
 
 
-
+from src.geoLifeCLEF.utils import load_data_loaders
 
 if __name__ =="__main__":
     main()
+    train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+    print(type(test_loader))
+

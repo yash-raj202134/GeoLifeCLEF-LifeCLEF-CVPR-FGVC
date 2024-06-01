@@ -4,7 +4,9 @@ from typing import List
 
 from src.geoLifeCLEF.utils.common import read_yaml,create_directories
 
-from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,DataValidationConfig)
+from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,
+                                                  DataValidationConfig,
+                                                  DataLoadingandTransformationConfig)
 
 
 class ConfigurationManager:
@@ -75,6 +77,21 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_loader_and_transformer_config(self)-> DataLoadingandTransformationConfig:
+        config = self.config.data_loading_and_transformation
+
+        create_directories([config.root_dir])
+
+        data_loader_and_transformer_config = DataLoadingandTransformationConfig(
+            root_dir = config.root_dir,
+            dataset = config.dataset,
+            save_data= config.save_data
+        )
+
+        return data_loader_and_transformer_config
+    
+    
     
 
 
