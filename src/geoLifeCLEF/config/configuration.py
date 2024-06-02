@@ -7,7 +7,8 @@ from src.geoLifeCLEF.utils.common import read_yaml,create_directories
 from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,
                                                   DataValidationConfig,
                                                   DataLoadingandTransformationConfig,
-                                                  Multimodalconfig)
+                                                  Multimodalconfig,
+                                                  ModelTrainerConfig)
 
 
 class ConfigurationManager:
@@ -99,11 +100,28 @@ class ConfigurationManager:
 
         multi_modal_config = Multimodalconfig(
             root_dir = config.root_dir,
-            data_loader_path= config.data_loader_path
+            data_loader_path = config.data_loader_path
 
         )
         return multi_modal_config
     
+
+    def get_model_trainer_config(self)-> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.TrainingParameters
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = config.root_dir,
+            multimodal = config.multimodal,
+            learning_rate = params.learning_rate,
+            num_epochs = params.num_epochs,
+            debug = params.debug,
+            positive_weigh_factor =  params.positive_weigh_factor
+
+        )
+        return model_trainer_config
 
     
 

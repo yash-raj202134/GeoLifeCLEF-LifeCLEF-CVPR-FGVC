@@ -39,3 +39,6 @@ initialize_multimodal:
   root_dir: artifacts/multi_modal
   data_loader_path: artifacts/data_loader
 
+model_trainer:
+  root_dir: artifacts/model_trainer
+  multimodal: artifacts/multi_modal/multimodal_ensemble_model.pth

@@ -33,3 +33,13 @@ class Multimodalconfig:
     data_loader_path: Path
 
 
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    multimodal: str
+
+    # parameters
+    learning_rate: float
+    num_epochs: int
+    debug: bool
+    positive_weigh_factor: float

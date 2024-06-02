@@ -3,7 +3,8 @@ from src.geoLifeCLEF.pipeline.stage_01_data_ingestion import DataIngestionPipeli
 from src.geoLifeCLEF.pipeline.stage_02_data_validation import DataValidationPipeline
 from src.geoLifeCLEF.pipeline.stage_03_data_loading_and_transformation import DataLoadingandTransformationPipeline
 from src.geoLifeCLEF.pipeline.stage_04_multi_modal_initialization import multiModalInitializationipeline
-
+from src.geoLifeCLEF.pipeline.stage_05_model_training import ModelTrainerPipeline
+from src.geoLifeCLEF.utils import load_data_loaders
 
 def main():
 
@@ -20,32 +21,43 @@ def main():
     #     raise e
     
 
-    STAGE_NAME = "DATA VALIDATION"   
-    try:
-        logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = DataValidationPipeline()
-        pipeline.run()
-        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
-    except Exception as e:
-        logger.exception(e)
-        raise e
+    # STAGE_NAME = "DATA VALIDATION"   
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = DataValidationPipeline()
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
 
 
-    STAGE_NAME = "DATA LOADING STAGE"
-    try:
-        logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = DataLoadingandTransformationPipeline()
-        pipeline.run()
-        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
-    except Exception as e:
-        logger.exception(e)
-        raise e
+    # STAGE_NAME = "DATA LOADING STAGE"
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = DataLoadingandTransformationPipeline()
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
     
 
-    STAGE_NAME = "MULTI MODAL INITIALIZATION STAGE"
+    # STAGE_NAME = "MULTI MODAL INITIALIZATION STAGE"
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = multiModalInitializationipeline()
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
+
+
+    STAGE_NAME = "MODEL TRAINER STAGE"
     try:
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = multiModalInitializationipeline()
+        pipeline = ModelTrainerPipeline()
         pipeline.run()
         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
     except Exception as e:
@@ -54,7 +66,6 @@ def main():
 
 
 
-from src.geoLifeCLEF.utils import load_data_loaders
 
 if __name__ =="__main__":
 

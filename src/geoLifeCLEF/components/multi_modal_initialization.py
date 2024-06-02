@@ -7,15 +7,32 @@ import torch.nn.functional as F
 import torch.nn as nn
 import torchvision.models as models
 import pandas as pd
+from src.geoLifeCLEF.constants import *
 from src.geoLifeCLEF.entity.config_entity import Multimodalconfig
 
 
-class MultimodalEnsemble(nn.Module):
-    def __init__(self,config:Multimodalconfig,num_classes):
+class Multimodalinitialization():
+    def __init__(self,config:Multimodalconfig) -> None:
         self.config = config
+        pass
+
+    def get_multimodal_ensemble_model(self):
+        # Check if cuda is available
+        device = torch.device("cpu")
+        if torch.cuda.is_available():
+            device = torch.device("cuda")
+            print("DEVICE = CUDA")
+        
+        model = MultimodalEnsemble(num_classes=num_classes).to(device)
+        torch.save(model.state_dict(),os.path.join(self.config.root_dir,"multimodal_ensemble_model.pth"))
+        return True
+    
+
+class MultimodalEnsemble(nn.Module):
+    def __init__(self,num_classes):
 
         super(MultimodalEnsemble, self).__init__()
-        train_tab = pd.read_csv(self.config.data_loader_path+"/train_tab.csv")
+        train_tab = pd.read_csv("artifacts/data_loader/train_tab.csv")
         features = list(train_tab.columns)[1:]
         self.tab_norm = nn.LayerNorm([len(features)])
         self.tab_model = nn.Sequential(nn.Linear(len(features),128),

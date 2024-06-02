@@ -1,1 +1,8 @@
-key: value
+# Hyperparameters
+
+TrainingParameters:
+
+  learning_rate: 3e-4
+  num_epochs: 3
+  debug: True
+  positive_weigh_factor: 1.0
