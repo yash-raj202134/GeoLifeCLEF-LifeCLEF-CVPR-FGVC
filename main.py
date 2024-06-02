@@ -9,8 +9,8 @@ from src.geoLifeCLEF.utils import load_data_loaders
 def main():
 
     # STAGE_NAME = "DATA INGESTION"
-    # # logger.info("test log 2")
-    # # Run the data ingestion pipeline
+    # logger.info("test log 2")
+    # Run the data ingestion pipeline
     # try:
     #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
     #     pipeline = DataIngestionPipeline()
@@ -54,15 +54,17 @@ def main():
     #     raise e
 
 
-    STAGE_NAME = "MODEL TRAINER STAGE"
-    try:
-        logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = ModelTrainerPipeline()
-        pipeline.run()
-        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
-    except Exception as e:
-        logger.exception(e)
-        raise e
+    # STAGE_NAME = "MODEL TRAINER STAGE"
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = ModelTrainerPipeline()
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
+    pass
+
 
 
 
@@ -70,6 +72,6 @@ def main():
 if __name__ =="__main__":
 
     main()
-    train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
-    print(type(test_loader))
+    # train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+    # print(type(test_loader))
 

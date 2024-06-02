@@ -9,3 +9,4 @@ tqdm
 einops
 python-box
 ensure
+kaggle
