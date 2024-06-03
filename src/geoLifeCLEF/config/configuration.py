@@ -8,7 +8,8 @@ from src.geoLifeCLEF.entity.config_entity import (DataIngestionConfig,
                                                   DataValidationConfig,
                                                   DataLoadingandTransformationConfig,
                                                   Multimodalconfig,
-                                                  ModelTrainerConfig)
+                                                  ModelTrainerConfig,
+                                                  ModelValidationConfig)
 
 
 class ConfigurationManager:
@@ -122,6 +123,19 @@ class ConfigurationManager:
 
         )
         return model_trainer_config
+    
+    def get_model_validation_config(self)->ModelValidationConfig:
+        config = self.config.model_validation
+
+        create_directories([config.root_dir])
+
+        model_validation_config = ModelValidationConfig(
+            root_dir = config.root_dir,
+            best_model = config.best_model,
+            last_model = config.last_model
+        )
+        return model_validation_config
+    
 
     
 

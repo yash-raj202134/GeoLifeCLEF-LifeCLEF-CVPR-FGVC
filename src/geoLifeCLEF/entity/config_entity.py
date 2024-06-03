@@ -43,3 +43,12 @@ class ModelTrainerConfig:
     num_epochs: int
     debug: bool
     positive_weigh_factor: float
+
+
+@dataclass
+class ModelValidationConfig:
+    root_dir: Path
+    best_model: str
+    last_model: str
+
+

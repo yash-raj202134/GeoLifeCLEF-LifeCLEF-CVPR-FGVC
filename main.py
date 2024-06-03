@@ -4,7 +4,7 @@ from src.geoLifeCLEF.pipeline.stage_02_data_validation import DataValidationPipe
 from src.geoLifeCLEF.pipeline.stage_03_data_loading_and_transformation import DataLoadingandTransformationPipeline
 from src.geoLifeCLEF.pipeline.stage_04_multi_modal_initialization import multiModalInitializationipeline
 from src.geoLifeCLEF.pipeline.stage_05_model_training import ModelTrainerPipeline
-from src.geoLifeCLEF.utils import load_data_loaders
+from src.geoLifeCLEF.pipeline.stage_06_model_validation import ModelValidationPipeline
 
 def main():
 
@@ -54,15 +54,27 @@ def main():
     #     raise e
 
 
-    STAGE_NAME = "MODEL TRAINER STAGE"
+    # STAGE_NAME = "MODEL TRAINER STAGE"
+    # try:
+    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+    #     pipeline = ModelTrainerPipeline()
+    #     pipeline.run()
+    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
+    
+
+    STAGE_NAME = "MODEL VALIDATION STAGE"
     try:
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-        pipeline = ModelTrainerPipeline()
+        pipeline = ModelValidationPipeline()
         pipeline.run()
         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
     except Exception as e:
         logger.exception(e)
         raise e
+    
     pass
 
 
