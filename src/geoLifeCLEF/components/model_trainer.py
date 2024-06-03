@@ -120,9 +120,9 @@ class ModelTrainer():
 
         # Save the trained model
         model.eval()
-        torch.save(model.state_dict(),self.config.root_dir)
+        torch.save(model.state_dict(),os.path.join(self.config.root_dir,"last.pth"))
         best_model.eval()
-        torch.save(best_model.state_dict(), self.config.root_dir)
+        torch.save(best_model.state_dict(), os.path.join(self.config.root_dir,"best.pth"))
 
         return True
 
