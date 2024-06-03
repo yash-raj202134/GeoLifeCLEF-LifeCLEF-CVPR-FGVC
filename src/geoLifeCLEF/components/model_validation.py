@@ -50,7 +50,8 @@ class ModelValidation():
         model.load_state_dict(torch.load(self.config.last_model,map_location=device))
         model.eval()
 
-
+        train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+        
         with torch.no_grad():
             all_predictions = []
             all_surveyID = []
