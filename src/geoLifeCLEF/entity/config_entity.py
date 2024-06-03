@@ -52,3 +52,11 @@ class ModelValidationConfig:
     last_model: str
 
 
+@dataclass
+class ModelPredictionConfig:
+    root_dir: Path
+    best_model: str
+    last_model: str
+    validation_result: Path
+
+

@@ -6,7 +6,7 @@ from copy import deepcopy
 import numpy as np
 import pandas as pd # type: ignore
 import matplotlib.pyplot as plt # type: ignore
-
+import json
 from src.geoLifeCLEF.entity.config_entity import ModelValidationConfig
 from src.geoLifeCLEF.constants import *
 from src.geoLifeCLEF import logger
@@ -51,7 +51,7 @@ class ModelValidation():
         model.eval()
 
         train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
-        
+
         with torch.no_grad():
             all_predictions = []
             all_surveyID = []
@@ -92,6 +92,14 @@ class ModelValidation():
                 best_top_k = k
                 
         print(f'best score {best_score:.5f} @ top {best_top_k}')
+
+        validations = {
+            'best_score' : best_score,
+            'best_top_k' : best_top_k,
+        }
+        with open(os.path.join(self.config.root_dir, "validation_result.json"), 'w') as file:
+            json.dump(validations, file)
+
 
 
         # saving the Plots results

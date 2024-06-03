@@ -48,4 +48,10 @@ model_validation:
   root_dir: artifacts/model_validation
   best_model: artifacts/model_trainer/best.pth
   last_model: artifacts/model_trainer/last.pth
-  
+
+
+model_prediction:
+  root_dir: artifacts/model_prediction
+  best_model: artifacts/model_trainer/best.pth
+  last_model: artifacts/model_trainer/last.pth
+  validation_result: artifacts/model_validation
