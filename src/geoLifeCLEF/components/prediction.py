@@ -15,11 +15,10 @@ from src.geoLifeCLEF.components.multi_modal_initialization import MultimodalEnse
 
 
 class ModelPrediction:
-    def __init__(self,config)->None:
+    def __init__(self,config:ModelPredictionConfig)->None:
         self.config = config
     
     def prediction(self):
-        
         device = torch.device("cpu")
 
         if torch.cuda.is_available():
@@ -36,10 +35,9 @@ class ModelPrediction:
         best_top_k = validations.get('best_top_k')
 
         with torch.no_grad():
-            all_predictions = []
             surveys = []
             top_k_indices = None
-            train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+            _ , _ , test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
             for batch_idx, (data0, data1, data2, data3, surveyID) in enumerate(tqdm(test_loader)):
                 data0 = data0.to(device)
                 data1 = data1.to(device)
@@ -69,7 +67,7 @@ class ModelPrediction:
 
         return True
     
-    
+
 
 
 

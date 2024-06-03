@@ -2,14 +2,12 @@
 import os
 import torch  # type: ignore
 from tqdm import tqdm # type: ignore
-from copy import deepcopy
 import numpy as np
 import pandas as pd # type: ignore
 import matplotlib.pyplot as plt # type: ignore
 import json
 from src.geoLifeCLEF.entity.config_entity import ModelValidationConfig
 from src.geoLifeCLEF.constants import *
-from src.geoLifeCLEF import logger
 from src.geoLifeCLEF.utils import load_data_loaders
 from src.geoLifeCLEF.components.multi_modal_initialization import MultimodalEnsemble
 
@@ -50,7 +48,7 @@ class ModelValidation():
         model.load_state_dict(torch.load(self.config.last_model,map_location=device))
         model.eval()
 
-        train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+        _ , val_loader , _ = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
 
         with torch.no_grad():
             all_predictions = []

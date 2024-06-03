@@ -19,3 +19,15 @@ class ModelPredictionPipeline():
 
         logger.info(status)
 
+
+
+# if __name__ == '__main__':
+    # STAGE_NAME = "Model prediction Stage"
+#     try:
+#         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+#         pipeline = ModelPredictionPipeline()
+#         pipeline.run()
+#         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+#     except Exception as e:
+#         logger.exception(e)
+#         raise e

@@ -40,7 +40,7 @@ class DataIngestionPipeline:
 #     try:
 #         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
 #         pipeline = DataIngestionPipeline()
-#         pipeline.main()
+#         pipeline.run()
 #         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
 #     except Exception as e:
 #         logger.exception(e)

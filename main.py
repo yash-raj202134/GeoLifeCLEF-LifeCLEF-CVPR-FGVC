@@ -95,6 +95,7 @@ def main():
 if __name__ =="__main__":
 
     main()
+    
     # train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
     # print(type(test_loader))
 

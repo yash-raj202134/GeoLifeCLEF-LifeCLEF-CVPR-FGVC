@@ -2,9 +2,7 @@ from src.geoLifeCLEF.config.configuration import ConfigurationManager
 from src.geoLifeCLEF import logger
 from src.geoLifeCLEF.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH,num_classes
 from src.geoLifeCLEF.components.multi_modal_initialization import Multimodalinitialization
-import torch
-import os
-from src.geoLifeCLEF import logger
+
 
 STAGE_NAME = "Multi modal initialization Stage"
 
@@ -24,3 +22,14 @@ class multiModalInitializationipeline:
 
 
         
+# if __name__ == '__main__':
+    # STAGE_NAME = "Multi modal initialization Stage"
+#     # Run the multimodal initialization pipeline
+#     try:
+#         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+#         pipeline = multiModalInitializationipeline()
+#         pipeline.run()
+#         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+#     except Exception as e:
+#         logger.exception(e)
+#         raise e

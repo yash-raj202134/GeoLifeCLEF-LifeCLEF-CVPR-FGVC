@@ -1,12 +1,9 @@
 # Imports
 import os
-import torch
-from tqdm import tqdm
-from copy import deepcopy
-import torch.nn.functional as F
-import torch.nn as nn
-import torchvision.models as models
-import pandas as pd
+import torch # type: ignore
+import torch.nn as nn # type: ignore
+import torchvision.models as models # type: ignore
+import pandas as pd # type: ignore
 from src.geoLifeCLEF.constants import *
 from src.geoLifeCLEF.entity.config_entity import Multimodalconfig
 

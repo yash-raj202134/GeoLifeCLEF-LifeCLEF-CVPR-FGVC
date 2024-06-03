@@ -24,7 +24,7 @@ class DataLoadingandTransformationPipeline:
 
 
 # if __name__ == '__main__':
-#     # Run the data validation pipeline
+#     # Run the data loading and transformation pipeline
 #     try:
 #         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
 #         pipeline = DataLoadingandTransformationPipeline()

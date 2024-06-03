@@ -44,7 +44,7 @@ class ModelTrainer():
 
         best_val = None
         best_model = deepcopy(model)
-        train_loader,val_loader,test_loader = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
+        train_loader,val_loader, _ = load_data_loaders("artifacts/data_loader/geolifeclef-2024")
 
         for epoch in range(self.config.num_epochs):
             # training 

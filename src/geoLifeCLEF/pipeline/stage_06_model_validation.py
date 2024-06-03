@@ -20,3 +20,14 @@ class ModelValidationPipeline():
 
 
 
+# if __name__ == '__main__':
+    # STAGE_NAME = "Model validation Stage"
+#     # Run the model validation pipeline
+#     try:
+#         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+#         pipeline = ModelValidationPipeline()
+#         pipeline.run()
+#         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+#     except Exception as e:
+#         logger.exception(e)
+#         raise e

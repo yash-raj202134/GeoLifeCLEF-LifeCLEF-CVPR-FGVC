@@ -21,3 +21,16 @@ class ModelTrainerPipeline():
         logger.info(status)
 
 
+
+
+# if __name__ == '__main__':
+    # STAGE_NAME = "Model trainer Stage"
+#     # Run the model trainer pipeline
+#     try:
+#         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+#         pipeline = ModelTrainerPipeline()
+#         pipeline.run()
+#         logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<\n\nx==========x")
+#     except Exception as e:
+#         logger.exception(e)
+#         raise e

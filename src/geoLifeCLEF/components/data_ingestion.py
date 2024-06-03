@@ -2,12 +2,10 @@ import os
 import subprocess
 import zipfile
 from src.geoLifeCLEF import logger
-from pathlib import Path
-
 from src.geoLifeCLEF.entity.config_entity import DataIngestionConfig
 
 # Import Kaggle API
-from kaggle.api.kaggle_api_extended import KaggleApi
+from kaggle.api.kaggle_api_extended import KaggleApi  # type: ignore
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
