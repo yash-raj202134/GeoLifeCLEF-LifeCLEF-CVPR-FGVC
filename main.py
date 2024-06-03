@@ -54,15 +54,15 @@ def main():
     #     raise e
 
 
-    # STAGE_NAME = "MODEL TRAINER STAGE"
-    # try:
-    #     logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
-    #     pipeline = ModelTrainerPipeline()
-    #     pipeline.run()
-    #     logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
-    # except Exception as e:
-    #     logger.exception(e)
-    #     raise e
+    STAGE_NAME = "MODEL TRAINER STAGE"
+    try:
+        logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
+        pipeline = ModelTrainerPipeline()
+        pipeline.run()
+        logger.info(f">>>>>> {STAGE_NAME} completed <<<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e
     pass
 
 

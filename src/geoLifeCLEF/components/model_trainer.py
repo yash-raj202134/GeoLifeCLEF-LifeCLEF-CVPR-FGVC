@@ -27,11 +27,16 @@ class ModelTrainer():
             print("DEVICE = CUDA")
 
         model = MultimodalEnsemble(num_classes=num_classes).to(device)
+
+        # print(type(self.config.learning_rate))
+        # print(self.config.learning_rate)
+        # print(float(self.config.learning_rate))
+
         model.load_state_dict(torch.load(self.config.multimodal, map_location=device))
-        optimizer = torch.optim.AdamW(model.parameters(), lr=self.config.learning_rate)
+        optimizer = torch.optim.AdamW(model.parameters(), lr = float(self.config.learning_rate))
         # model = torch.load(self.config.multimodal, map_location=device)
         print(type(model))
-        optimizer = torch.optim.AdamW(model.parameters(), lr=self.config.learning_rate)
+        # optimizer = torch.optim.AdamW(model.parameters(), lr=self.config.learning_rate)
         criterion = torch.nn.BCEWithLogitsLoss()
 
 

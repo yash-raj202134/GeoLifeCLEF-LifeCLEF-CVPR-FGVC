@@ -121,6 +121,8 @@ class TrainDataset(Dataset):
     def __getitem__(self, idx):
         
         survey_id = self.metadata.surveyId[idx]
+        train_tab = pd.read_csv("artifacts/data_loader/train_tab.csv")
+        features = list(train_tab.columns)[1:]
         tab = torch.Tensor(self.tab[self.tab["surveyId"]==survey_id][features].values[0])
         landsat_sample = torch.nan_to_num(torch.load(os.path.join(self.landsat_data_dir, f"GLC24-PA-train-landsat-time-series_{survey_id}_cube.pt")))
         bioclim_sample = torch.nan_to_num(torch.load(os.path.join(self.bioclim_data_dir, f"GLC24-PA-train-bioclimatic_monthly_{survey_id}_cube.pt")))
