@@ -1,7 +1,7 @@
 
 import os
-import torch
-from tqdm import tqdm
+import torch  # type: ignore
+from tqdm import tqdm # type: ignore
 from copy import deepcopy
 import numpy as np
 
