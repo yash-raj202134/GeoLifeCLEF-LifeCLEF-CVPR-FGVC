@@ -10,6 +10,12 @@ The **Species Composition Prediction** project aims to predict plant species in 
 2. **Large-Scale Training and Validation**: Provide a substantial training set with millions of plant occurrences and detailed validation and test sets to ensure robust model performance.
 3. **Tackle Challenges**: Address multi-label learning from single positive labels, strong class imbalance, multi-modal learning, and large-scale data processing.
 
+Aim to develop and evaluate models that predict plant species
+composition at high spatial resolution (∼10m) from diverse type of input environmental predictors,
+by calibrating them on two types of species observations: Opportunistic presence-only records and
+standardized presence-absence surveys
+![](evaluating_model.png)
+image courtesy : Christophe Botella, Benjamin Deneu, Diego Marcos, Maximilien Servajean, Joaquim Estopinan, et al.. The GeoLifeCLEF 2023 Dataset to evaluate plant species distribution models at high spatial resolution across Europe. 2023. ⟨hal-04152362⟩
 ## Dataset
 
 ### Training Set
@@ -43,6 +49,9 @@ The prediction models will use the following types of data:
 3. **Multi-Modal Learning**: Integrating diverse types of data (e.g., satellite images and climatic series) effectively.
 4. **Large-Scale Data Processing**: Efficiently processing and analyzing a vast amount of data to generate accurate predictions.
 
+
+## Workflows
+![Workflows](modular.png)
 ## Usage
 
 ### Installation
