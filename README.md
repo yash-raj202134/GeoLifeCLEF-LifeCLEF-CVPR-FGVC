@@ -56,4 +56,9 @@ The prediction models will use the following types of data:
 
 ### Installation
 
-To get started with the project, clone the repository and install the required dependencies:
+To get started with the project, clone the repository and install the required dependencies using requirements.txt
+
+### Author
+Collaborations and contributions are open for this project.
+<br>
+Contact :[yashraj3376@gmail.com]
