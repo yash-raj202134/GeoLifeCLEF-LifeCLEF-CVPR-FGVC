@@ -61,4 +61,4 @@ To get started with the project, clone the repository and install the required d
 ### Author
 Collaborations and contributions are open for this project.
 <br>
-Contact :[yashraj3376@gmail.com]
+Contact :[ yashraj3376@gmail.com]
