@@ -10,7 +10,6 @@ from src.geoLifeCLEF.pipeline.prediction_pipeline.stage_01_prediction import Mod
 def main():
 
     STAGE_NAME = "DATA INGESTION"
-    # logger.info("test log 2")
     # Run the data ingestion pipeline
     try:
         logger.info(f">>>>>> {STAGE_NAME} started <<<<<<")
