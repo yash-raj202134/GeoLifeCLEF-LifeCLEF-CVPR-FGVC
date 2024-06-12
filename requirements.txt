@@ -1,6 +1,5 @@
 pandas
 numpy
-pytorch
 scikit-learn
 xgboost
 matplotlib
