@@ -3,7 +3,6 @@ import subprocess
 import zipfile
 from src.geoLifeCLEF import logger
 from src.geoLifeCLEF.entity.config_entity import DataIngestionConfig
-import sys
 
 # Import Kaggle API
 from kaggle.api.kaggle_api_extended import KaggleApi  # type: ignore
@@ -37,7 +36,7 @@ class DataIngestion:
             logger.info(f"Downloaded data from {source_url} into {local_file_path}")
         
         except Exception as e:
-            logger.exception(e,sys)
+            logger.error(e)
 
 
     
@@ -57,7 +56,7 @@ class DataIngestion:
                 zip_ref.extractall(unzip_path)
             logger.info(f"Extracted {local_file_path} into {unzip_path}")
         except Exception as e:
-            logger.exception(e,sys)
+            logger.error(e)
 
         # Remove the local ZIP file to save disk space
         try:

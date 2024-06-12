@@ -4,7 +4,6 @@ from src.geoLifeCLEF import logger
 
 from src.geoLifeCLEF.components.prediction import ModelPrediction
 from src.geoLifeCLEF.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
-import sys
 
 STAGE_NAME = "Model prediction Stage"
 
@@ -21,7 +20,7 @@ class ModelPredictionPipeline():
 
             logger.info(status)
         except Exception as e:
-            logger.exception(e,sys)
+            logger.error(e)
 
 
 

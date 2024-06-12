@@ -31,7 +31,7 @@ class DataIngestionPipeline:
 
         except Exception as e:
             # Handle exceptions and log the error
-            logger.exception("Error during data ingestion pipeline", exc_info=True)
+            logger.error("Error during data ingestion pipeline", exc_info=True)
             raise e
 
 
