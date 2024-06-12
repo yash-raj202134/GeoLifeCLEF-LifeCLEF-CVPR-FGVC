@@ -2,7 +2,7 @@
 from src.geoLifeCLEF.config.configuration import ConfigurationManager
 from src.geoLifeCLEF.components.data_ingestion import DataIngestion
 
-from src.geoLifeCLEF.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
+from src.geoLifeCLEF.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from src.geoLifeCLEF import logger
 
 STAGE_NAME = "Data Ingestion Stage"

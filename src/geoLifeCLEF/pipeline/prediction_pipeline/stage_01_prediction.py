@@ -4,20 +4,24 @@ from src.geoLifeCLEF import logger
 
 from src.geoLifeCLEF.components.prediction import ModelPrediction
 from src.geoLifeCLEF.constants import CONFIG_FILE_PATH,PARAMS_FILE_PATH
+import sys
 
 STAGE_NAME = "Model prediction Stage"
 
 class ModelPredictionPipeline():
     def __init__(self):
-        pass
+        self.config = ConfigurationManager(config_filepath=CONFIG_FILE_PATH,params_filepath=PARAMS_FILE_PATH)
 
     def run(self):
-        config = ConfigurationManager(config_filepath=CONFIG_FILE_PATH,params_filepath=PARAMS_FILE_PATH)
-        model_prediction_config = config.get_model_prediction_config()
-        model_prediction = ModelPrediction(config = model_prediction_config)
-        status = model_prediction.prediction()
+        try:
 
-        logger.info(status)
+            model_prediction_config = self.config.get_model_prediction_config()
+            model_prediction = ModelPrediction(config = model_prediction_config)
+            status = model_prediction.prediction()
+
+            logger.info(status)
+        except Exception as e:
+            logger.exception(e,sys)
 
 
 
