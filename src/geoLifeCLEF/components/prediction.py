@@ -59,6 +59,7 @@ class ModelPrediction:
         
 
         ## Save prediction file!
+        logger.info("saving the prediction file output as csv")
         data_concatenated = [' '.join(map(str, row)) for row in top_k_indices]
 
         pd.DataFrame({'surveyId': surveys,
