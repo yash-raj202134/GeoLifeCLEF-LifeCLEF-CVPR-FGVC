@@ -62,3 +62,6 @@ To get started with the project, clone the repository and install the required d
 Collaborations and contributions are open for this project.
 <br>
 Contact :[ yashraj3376@gmail.com]
+<br>
+Read More :
+https://github.com/yash-raj202134/GeoLifeCLEF-LifeCLEF-CVPR-FGVC/tree/main/research
