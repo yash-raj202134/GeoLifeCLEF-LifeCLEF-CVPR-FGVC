@@ -65,3 +65,14 @@ Contact :[ yashraj3376@gmail.com]
 <br>
 Read more here:
 [GeoLifeCLEF-LifeCLEF-CVPR-FGVC Research Repository](https://github.com/yash-raj202134/GeoLifeCLEF-LifeCLEF-CVPR-FGVC/tree/main/research)
+
+### References
+
+@misc{geolifeclef-2023-lifeclef-2023-x-fgvc10,
+    author = {Alexis Joly, Benjamin Deneu, César Leblanc, ChrisBotella, Diego Marcos, Maximilien Servajean, tlarcher},
+    title = {GeoLifeCLEF 2023 - LifeCLEF 2023 x FGVC10},
+    publisher = {Kaggle},
+    year = {2023},
+    url = {https://kaggle.com/competitions/geolifeclef-2023-lifeclef-2023-x-fgvc10}
+}
+
